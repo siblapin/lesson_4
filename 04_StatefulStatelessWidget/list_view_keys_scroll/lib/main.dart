@@ -74,7 +74,9 @@ class _MyHomePageState extends State<MyHomePage> {
           Container(
             child: data1.first,
           ),
-          Text('e')
+          Container(
+            child: data.last,
+          ),
         ]),
       ),
     );
