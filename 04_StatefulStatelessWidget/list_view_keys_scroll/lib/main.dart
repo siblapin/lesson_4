@@ -74,10 +74,36 @@ class _MyHomePageState extends State<MyHomePage> {
           Container(
             child: data1.first,
           ),
-          Container(
-            child: data.last,
-          ),
+          ListFoto(data1: data1),
         ]),
+      ),
+    );
+  }
+}
+
+class ListFoto extends StatelessWidget {
+  const ListFoto({
+    Key key,
+    @required this.data1,
+  }) : super(key: key);
+
+  final List<Image> data1;
+
+  @override
+  Widget build(BuildContext context) {
+    return ScrollConfiguration(
+      child: Container(
+        width: double.infinity,
+        child: Column(
+          children: [
+            Container(child: data1[0]),
+            Container(child: data1[1]),
+            Container(child: data1[2]),
+            Container(child: data1[3]),
+            Container(child: data1[4]),
+            Container(child: data1[5]),
+          ],
+        ),
       ),
     );
   }
