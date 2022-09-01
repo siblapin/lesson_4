@@ -71,18 +71,16 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text('Homework example'),
         ),
         body: TabBarView(children: [
-          Container(
-            child: data1.first,
-          ),
-          ListFoto(data1: data1),
+          ListFoto(data: data),
+          ListFoto1(data1: data1),
         ]),
       ),
     );
   }
 }
 
-class ListFoto extends StatelessWidget {
-  const ListFoto({
+class ListFoto1 extends StatelessWidget {
+  const ListFoto1({
     Key key,
     @required this.data1,
   }) : super(key: key);
@@ -91,20 +89,60 @@ class ListFoto extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScrollConfiguration(
-      child: Container(
-        width: double.infinity,
-        child: Column(
-          children: [
+    return ListView.builder(
+      key: PageStorageKey('Listfoto1'),
+      itemCount: 9,
+      itemBuilder: (BuildContext context, int index) {
+        return Container(
+          width: double.infinity,
+          child: Column(children: [
             Container(child: data1[0]),
             Container(child: data1[1]),
             Container(child: data1[2]),
             Container(child: data1[3]),
             Container(child: data1[4]),
             Container(child: data1[5]),
-          ],
-        ),
-      ),
+            Container(child: data1[6]),
+            Container(child: data1[7]),
+            Container(child: data1[8]),
+            Container(child: data1[9]),
+          ]),
+        );
+      },
+    );
+  }
+}
+
+class ListFoto extends StatelessWidget {
+  const ListFoto({
+    Key key,
+    @required this.data,
+  }) : super(key: key);
+
+  final List<Image> data;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      key: PageStorageKey('Listfoto'),
+      itemCount: 9,
+      itemBuilder: (BuildContext context, int index) {
+        return Container(
+          width: double.infinity,
+          child: Column(children: [
+            Container(child: data[0]),
+            Container(child: data[1]),
+            Container(child: data[2]),
+            Container(child: data[3]),
+            Container(child: data[4]),
+            Container(child: data[5]),
+            Container(child: data[6]),
+            Container(child: data[7]),
+            Container(child: data[8]),
+            Container(child: data[9]),
+          ]),
+        );
+      },
     );
   }
 }
