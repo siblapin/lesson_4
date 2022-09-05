@@ -91,7 +91,7 @@ class ListFoto1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       key: PageStorageKey('Listfoto1'),
-      itemCount: 9,
+      itemCount: data1.length,
       itemBuilder: (BuildContext context, int index) {
         return Container(
           width: double.infinity,
@@ -126,7 +126,7 @@ class ListFoto extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       key: PageStorageKey('Listfoto'),
-      itemCount: 9,
+      itemCount: data.length,
       itemBuilder: (BuildContext context, int index) {
         return Container(
           width: double.infinity,
